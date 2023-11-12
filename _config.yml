@@ -85,9 +85,9 @@ author:
   bio              : "Rock Mechanics"
   location         : "Xi'an City, Shaanxi Province, PRC"
   employer         : "Xi’an University of Architecture and Technology"
-  pubmed           :  # "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "https://scholar.google.com/citations?user=SmBYNZoAAAAJ&hl=zh-CN"
-  email            : "zengtaocn@126.com"
+  pubmed           : # "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  googlescholar    : #"https://scholar.google.com/citations?user=SmBYNZoAAAAJ&hl=zh-CN"
+  email            : # "zengtaocn@126.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
