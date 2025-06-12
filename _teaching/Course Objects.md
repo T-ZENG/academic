@@ -1,5 +1,7 @@
 ---
-permalink: /teaching/2015-spring-teaching-1
+title: "# Course Objects"
+collection: teaching
+permalink: /teaching/Course Objects
+date: 2024-01-02
 ---
-# Course Objects
 This course is a fundamental requirement for civil engineering students. It is designed to equip them with a comprehensive understanding of the fundamental principles of soil mechanics and the associated geotechnical engineering challenges, including seepage, deformation, and shear strength. Students will develop the capability to independently analyze and address complex geotechnical problems, while cultivating a deep appreciation for specialized ethics and codes.Furthermore, the course emphasizes the importance of cultivating a strong sense of social responsibility in the practice of engineering.
