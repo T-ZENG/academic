@@ -2,7 +2,7 @@
 title: "Chpater-4 Compaction of soils"
 collection: teaching
 type: "Slides"
-permalink: /teaching/2015-spring-teaching-1
+permalink: /teaching/Chpater-4
 venue: "XAUAT, School of Civil Engineering"
 date: 2024-01-29
 location: "City, Country"
