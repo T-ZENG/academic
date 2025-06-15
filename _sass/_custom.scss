@@ -1,6 +1,15 @@
-// Increase page content width
+// 强制设置页面主要内容区域最大宽度
 .page,
+.page__content,
+.layout--single,
+.initial-content,
+.initial-content .page,
 .archive,
-.page__content {
+.page__inner {
   max-width: 1200px !important;
+  width: 100% !important;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
