@@ -55,7 +55,7 @@
 .sidebar {
   width: 260px;
   flex-shrink: 0;
-  margin-right: 30px;
+  margin-right: 10px;
   position: sticky;
   top: 2rem;
 }
@@ -64,13 +64,13 @@
 article.page {
   flex: 1;
   max-width: 100%;
-  padding: 0 20px;
+  padding: 0 10px;
   box-sizing: border-box;
 }
 
 /* 可选优化：控制段落最大宽度，避免太宽不易阅读 */
 .page__content {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
