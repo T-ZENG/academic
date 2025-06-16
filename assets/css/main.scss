@@ -84,7 +84,7 @@ article.page {
 
 /* 控制 archive 布局时的正文最大宽度（如 publication 页面） */
 .archive {
-  max-width: 1200px;
+  max-width: none;
   margin: 0;
   padding: 0;
 }
@@ -112,4 +112,14 @@ article.page {
     margin: 0;
     padding: 0;
   }
+}
+
+/* 修复 archive 区域宽度过小的问题 */
+.archive {
+  flex: 1;                     /* 让 archive 区域撑满除 sidebar 外的剩余空间 */
+  max-width: 100%;             /* 去除宽度上限 */
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
