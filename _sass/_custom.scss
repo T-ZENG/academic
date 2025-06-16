@@ -6,7 +6,7 @@
 .initial-content .page,
 .archive,
 .page__inner {
-  max-width: 1200px !important;
+  max-width: 1400px !important;
   width: 100% !important;
   margin-left: auto;
   margin-right: auto;
@@ -25,7 +25,7 @@
 
 .archive {
   margin-left: 300px; /* 留出比 sidebar 更大的空间防止文字覆盖 */
-  max-width: 1000px; /* 可选，防止行太长 */
+  max-width: 1200px; /* 可选，防止行太长 */
   padding: 0 20px;
   box-sizing: border-box;
 }
@@ -53,7 +53,7 @@
   margin-left: 280px; /* 留出 sidebar 的空间 */
   padding-right: 2rem;
   padding-left: 2rem;
-  max-width: 1200px;
+  max-width: 1400px;
   box-sizing: border-box;
 }
 
