@@ -41,40 +41,55 @@
 @import "print";
 @import "custom"; // 放在所有导入之后
 /* =============================
-   修复 sidebar 与正文重叠问题
+   ✅ Custom fixes start here
    ============================= */
 
-/* 设置 main 区域为 flex 容器 */
+/* 设置主容器为 Flex，使 sidebar 与正文并排显示 */
 #main {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
 }
 
-/* 左侧 sidebar 样式 */
+/* Sidebar 样式 */
 .sidebar {
-  width: 260px;
+  width: 240px;
   flex-shrink: 0;
-  margin-right: 10px;
+  margin-right: 15px;
   position: sticky;
   top: 2rem;
 }
 
-/* 正文内容区域，撑满剩余空间 */
+/* 正文外壳 article */
 article.page {
   flex: 1;
-  max-width: 100%;
-  padding: 0 10px;
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* 可选优化：控制段落最大宽度，避免太宽不易阅读 */
+/* 正文内部内容容器 */
 .page__content {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1000px;
+  margin: 0; /* ❗ 关键：避免 auto 居中造成远离 sidebar */
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* 移动端兼容处理 */
+/* page__inner-wrap 通常包住 page__content */
+.page__inner-wrap {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* 控制 archive 布局时的正文最大宽度（如 publication 页面） */
+.archive {
+  max-width: 1000px;
+  margin: 0;
+  padding: 0;
+}
+
+/* 移动端响应式优化 */
 @media screen and (max-width: 768px) {
   #main {
     flex-direction: column;
@@ -88,5 +103,13 @@ article.page {
 
   article.page {
     padding: 0 10px;
+  }
+
+  .page__content,
+  .page__inner-wrap,
+  .archive {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
   }
 }
