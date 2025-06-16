@@ -40,56 +40,58 @@
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
 @import "custom"; // 放在所有导入之后
-/* =============================
-   ✅ Custom fixes start here
-   ============================= */
 
-/* 设置主容器为 Flex，使 sidebar 与正文并排显示 */
+/* Flex 布局：左侧 sidebar + 右侧正文 */
 #main {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  gap: 0; /* 避免浏览器默认添加额外间距 */
 }
 
 /* Sidebar 样式 */
 .sidebar {
   width: 240px;
   flex-shrink: 0;
-  margin-right: 15px;
+  margin-right: 20px;
   position: sticky;
   top: 2rem;
 }
 
-/* 正文外壳 article */
+/* 正文容器 article.page 用于 profile/publication 页面 */
 article.page {
   flex: 1;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 正文内部内容容器 */
-.page__content {
-  max-width: 1400px;
-  margin: 0; /* ❗ 关键：避免 auto 居中造成远离 sidebar */
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* page__inner-wrap 通常包住 page__content */
-.page__inner-wrap {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-/* 控制 archive 布局时的正文最大宽度（如 publication 页面） */
+/* archive 页面正文容器 */
 .archive {
-  max-width: none;
+  flex: 1;
+  max-width: 100%;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-/* 移动端响应式优化 */
+/* 内部内容块（page__content），移除居中限制 */
+.page__content,
+.page__inner-wrap {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 可选：限制超宽内容显示行长（增强阅读性） */
+.page__content > div,
+.archive > div {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 移动端响应式处理 */
 @media screen and (max-width: 768px) {
   #main {
     flex-direction: column;
@@ -101,25 +103,14 @@ article.page {
     position: relative;
   }
 
-  article.page {
+  article.page,
+  .archive {
     padding: 0 10px;
   }
 
-  .page__content,
-  .page__inner-wrap,
-  .archive {
+  .page__content > div,
+  .archive > div {
     max-width: 100%;
-    margin: 0;
     padding: 0;
   }
-}
-
-/* 修复 archive 区域宽度过小的问题 */
-.archive {
-  flex: 1;                     /* 让 archive 区域撑满除 sidebar 外的剩余空间 */
-  max-width: 100%;             /* 去除宽度上限 */
-  padding-left: 0;
-  padding-right: 0;
-  margin: 0;
-  box-sizing: border-box;
 }
