@@ -40,3 +40,53 @@
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
 @import "custom"; // 放在所有导入之后
+/* =============================
+   修复 sidebar 与正文重叠问题
+   ============================= */
+
+/* 设置 main 区域为 flex 容器 */
+#main {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+/* 左侧 sidebar 样式 */
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  margin-right: 30px;
+  position: sticky;
+  top: 2rem;
+}
+
+/* 正文内容区域，撑满剩余空间 */
+article.page {
+  flex: 1;
+  max-width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* 可选优化：控制段落最大宽度，避免太宽不易阅读 */
+.page__content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* 移动端兼容处理 */
+@media screen and (max-width: 768px) {
+  #main {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-right: 0;
+    position: relative;
+  }
+
+  article.page {
+    padding: 0 10px;
+  }
+}
