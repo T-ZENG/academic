@@ -29,3 +29,49 @@
   padding: 0 20px;
   box-sizing: border-box;
 }
+
+/* =====================
+   保证 sidebar 与正文互不遮挡
+   ===================== */
+
+/* 设置 sidebar 样式 */
+.sidebar {
+  width: 260px;
+  position: sticky;
+  top: 2rem;
+  float: left;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* 设置右侧正文内容区域 */
+.archive,
+.page,
+.page__content,
+.layout--single,
+.initial-content .page {
+  margin-left: 280px; /* 留出 sidebar 的空间 */
+  padding-right: 2rem;
+  padding-left: 2rem;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+/* 保证移动端不重叠 */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    float: none;
+    width: 100%;
+    position: relative;
+    margin-left: 0;
+  }
+
+  .archive,
+  .page,
+  .page__content,
+  .layout--single,
+  .initial-content .page {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}
